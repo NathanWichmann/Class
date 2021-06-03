@@ -1,4 +1,6 @@
+//javascript used for the logout event 
 const logout = async () => {
+  //connects to the users rout with the logout 
   const response = await fetch('/api/users/logout', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -10,5 +12,5 @@ const logout = async () => {
     alert(response.statusText);
   }
 };
-
+// button for the logout 
 document.querySelector('#logout').addEventListener('click', logout);

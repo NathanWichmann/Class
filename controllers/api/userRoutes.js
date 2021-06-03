@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
+// used to log the user out and connects to the logout in the javascript that holds the eventlistener for the button
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

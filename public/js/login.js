@@ -1,3 +1,6 @@
+
+
+//this is the javascript used for checking the email and password 
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,7 +24,7 @@ const loginFormHandler = async (event) => {
     }
   }
 };
-
+// this is the javascript used to connect to the sign up form and 
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -43,11 +46,11 @@ const signupFormHandler = async (event) => {
     }
   }
 };
-
+//button for the login form
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
-
+//button for the sign up form 
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);

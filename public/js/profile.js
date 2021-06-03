@@ -2,18 +2,19 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#title').value.trim();
-  
   const body = document.querySelector('#body').value.trim();
+  const comment = document.querySelector('#comment').value.trim();
 
-  if (title && body) {
-    const response = await fetch(`/api/posts`, {
+  if (title && body && comment) {
+    const response = await fetch(`/api/posts`,  {
       method: 'POST',
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({ title, body, comment }),
       headers: {
         'Content-Type': 'application/json',
+
       },
     });
-    console.log(response)
+    console.log(comment)
     if (response.ok) {
       document.location.replace('/profile');
     } else {

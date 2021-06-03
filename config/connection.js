@@ -1,8 +1,10 @@
+// creates the sequelize 
 const Sequelize = require('sequelize');
+//creates the .env varable 
 require('dotenv').config();
-
+//changable variable 
 let sequelize;
-
+//if using the jaws use jaws if unavailable use sequelize and creates these .env variables 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -17,5 +19,5 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-
+//exports sequelize 
 module.exports = sequelize;

@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../../Class/config/connection");
-
+//creates the model comment which creates the table in the mysql database to be used by the application
 class Comment extends Model {}
 
 Comment.init(
@@ -16,7 +16,7 @@ Comment.init(
       type: DataTypes.STRING,
       allownull: false,
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
