@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/profile/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -45,7 +45,7 @@ router.get('/post/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
+    res.render('project', {
       ...post,
       logged_in: req.session.logged_in
     });
