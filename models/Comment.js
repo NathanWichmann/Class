@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require("../Class/config/connection");
+const sequelize = require("../config/connection");
 //creates the model comment which creates the table in the mysql database to be used by the application
 class Comment extends Model {}
 
