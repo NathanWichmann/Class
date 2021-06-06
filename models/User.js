@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const sequelize = require('../../Class/config/connection');
+const sequelize = require('../Class/config/connection');
 //creates the model user which creates the table in the mysql database to be used by the application and uses the checkPassword 
 class User extends Model {
   checkPassword(loginPw) {
