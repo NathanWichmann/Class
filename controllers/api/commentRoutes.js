@@ -1,15 +1,17 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
-router.get('/', (req, res) => {
-  Comment.findAll()
-  .then((dbcommentData) =>{ 
+router.post('/', (req, res) => {
+  Comment.create({...req.body, user_id: req.session.user_id})
+  .then((newComment) =>{ 
     // console.log(dbcommentData)
     // convert the data to smething handlebars can use (serialize)
-    var comments = dbcommentData.map(comment => comment.get({plain:true}))
+   // var comments = dbcommentData.map(comment => comment.get({plain:true}))
     // render the data in a handlebars template
-    res.render("comments", {comments})
-    console.log(comments)
+
+    console.log(newComment)
+    res.json(newComment)
+   // console.log(comments)
     
    })
   .catch(err => {
