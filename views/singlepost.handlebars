@@ -16,9 +16,9 @@
     <p>
       {{body}}
     </p>
-    <p>
-      {{user.name}} 
-    </p>
+    <h5>
+     Created by: {{user.name}} 
+    </h5>
   </div>
   {{/each}}
 </div>
@@ -30,9 +30,13 @@
 <div>
   <h3>Add a Comment</h3>
   <input type='hidden' name='postId' value='{{post.id}}'/>
-  <label>Comment</label>
+  <label for="comment">
+    Comment:
+    </label>
+    <br>
   <textarea name='commentBody'></textarea>
-  <button type='submit' class='btn'> Submit </button>
+  </div class="form-group">
+  <button type='submit' class='btn btn-primary'> Submit </button>
 </div>
 </form>
 

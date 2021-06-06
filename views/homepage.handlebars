@@ -9,16 +9,21 @@
 
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
-    <p>Created by {{user.name}} on {{format_date post.date_created}}</p>
+    <p>Created by: {{user.name}} on {{format_date post.date_created}}</p>
   </div>
   <div class="col-md-7">
-    <p>
+    <h3>
       {{post.title}}
-
+    </h3>
+        <p>
       {{post.body}}
+      </p>
 
       {{#each post.comments as |comment|}}
+      <h3>Comment:</h3>
+        <i>
         {{comment.body}}
+        </i>
       {{/each}}
       
   </div>

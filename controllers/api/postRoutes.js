@@ -5,7 +5,7 @@ const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //this creates the user_id req.session
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
