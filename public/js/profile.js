@@ -1,10 +1,11 @@
+// this is the form handler for creating a new post with body and title 
 const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#title').value.trim();
   const body = document.querySelector('#body').value.trim();
 //  const comment = document.querySelector('#comment').value.trim();
-
+  // this connects to the api/posts route 
   if (title && body) {
     const response = await fetch(`/api/posts`,  {
       method: 'POST',
@@ -22,7 +23,7 @@ const newFormHandler = async (event) => {
     }
   }
 };
-
+// this is the delete button handler and connects to the api/posts route 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -30,7 +31,7 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
     });
-
+    //if response ok replace the page without the deleted item
     if (response.ok) {
       document.location.replace('/profile');
     } else {

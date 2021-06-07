@@ -1,3 +1,4 @@
+//this is the form handller for the comments section in the singlepost.handlebars 
 const commentFormHandler = async (event) => {
     event.preventDefault();
   

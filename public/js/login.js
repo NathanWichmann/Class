@@ -24,7 +24,7 @@ const loginFormHandler = async (event) => {
     }
   }
 };
-// this is the javascript used to connect to the sign up form and 
+// this is the javascript used to connect to the sign up form through the name, email and password the user inputs
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
       body: JSON.stringify({ name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+     // If successful, redirect the browser to the profile page
     if (response.ok) {
       document.location.replace('/profile');
     } else {
