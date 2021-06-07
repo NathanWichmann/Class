@@ -5,13 +5,21 @@ This repository (Class) is an educational homework assignment from the CARL-OTT-
 Class Techbook, allows people from the Tech industry to connect with each other in a blog format, with just a little class. The user interface is simple, yet elegant and shows just a little suffistication and class. 
 
 ## Table of Contents 
-  - [Techbook](#techbook)
+  - [Unit 14: Model, View, Controller](#unit-14-model-view-controller)
   - [Table of Contents](#table-of-contents)
+  - [Pictures](#pictures)
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Credits](#credits)
-  - [License](#lisence)
+  - [Lisence](#lisence)
+  
+ ## Pictures
+![Screenshot 2021-06-07 182703](https://user-images.githubusercontent.com/77902368/121095378-3f05f200-c7be-11eb-99b0-f3e69ee720f6.png)
+![Screenshot 2021-06-07 182733](https://user-images.githubusercontent.com/77902368/121095388-43320f80-c7be-11eb-9841-da0600f40245.png)
+![Screenshot 2021-06-07 182806](https://user-images.githubusercontent.com/77902368/121095392-46c59680-c7be-11eb-92b7-1121746bd17e.png)
+![Screenshot 2021-06-07 182831](https://user-images.githubusercontent.com/77902368/121095397-49c08700-c7be-11eb-82f0-7b9a43897a4a.png)
+
  ## Description 
 Class Techbook allows users to easily create a post with a title and body. The examples given in the seeded data are directly from a blog such as wired and another tech blog. This blog allows users to comment on what other users have posted. There are no limitations on the number of comments per user or restrictions on language used. If this were going into production, there would be a terms of use section added and checkbox that would need to be checked for agreement of usage before being able to sign up. There was no time for this to be added, however, might be something to investigate in the future. The user must be logged in, to see the single page comments and add a comment to the post. If they do not have an account with their name and email, they are unable to access the comments page. This adds a layer of security as each member must be authorized to use the page. However, the user is not authenticated, their email and name are not verified to ensure they are the person using the information. Authentication is not needed at this level but would be needed for a live deployed application for a company.
 The m-v-c model was exceedingly difficult to understand and follow at first and took some time to become familiar with. Like with anything, repetition is the key to success. Plus, the project used the same model, this created a 2-week period of learning to understand the concept.
