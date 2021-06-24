@@ -37,6 +37,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
+        User,
         {
           model: Comment,
           include: [User],
@@ -75,6 +76,19 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+router.get('/profile/edit/:id', withAuth, async (req, res)=>{
+  Post.findByPk(req.params.id)
+  .then( (postData) => {
+    
+    const post = postData.get({ plain: true })
+    res.render('edit', {
+      post
+    })
+  })
+
+})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
