@@ -1,10 +1,13 @@
+// connects all the files 
 const router = require('express').Router();
+//brings in the Post, User and Comment models 
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+//brings all the posts and comments together for all users dashboard page 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and join the user data 
     const postData = await Post.findAll({
       include: [
         {
@@ -32,6 +35,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// gets all posts by id 
 router.get('/post/:id', withAuth, async (req, res) => {
 
   try {
@@ -78,6 +83,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
+// this is the edit by id route 
 router.get('/profile/edit/:id', withAuth, async (req, res)=>{
   Post.findByPk(req.params.id)
   .then( (postData) => {
@@ -90,6 +96,7 @@ router.get('/profile/edit/:id', withAuth, async (req, res)=>{
 
 })
 
+// this is the login route 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

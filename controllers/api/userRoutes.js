@@ -1,7 +1,10 @@
+// this connects all the files 
 const router = require('express').Router();
+//this brings in the Usewr model
 const { User } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
+//this creates the sessions for the user 
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -17,6 +20,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+//this validates the user email and esures they are a user and creates a session in the databasde once authorized 
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });

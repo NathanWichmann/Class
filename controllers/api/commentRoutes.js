@@ -1,6 +1,10 @@
+//connects the files 
 const router = require('express').Router();
+//requires the comment model
 const { Comment } = require('../../models');
 
+
+//converts the user data into something handlbars can use by serializing the data 
 router.post('/', (req, res) => {
   Comment.create({...req.body, user_id: req.session.user_id})
   .then((newComment) =>{ 
